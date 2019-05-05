@@ -1,0 +1,77 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="{% static 'webapp/css/bootstrap.min.css' %}">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="{% static 'webapp/css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'webapp/css/main.css' %}">
+
+        <script src="{% static 'webapp/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+    </head>
+    <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h4 style="font-family:verdana;font-style: italic;"><a class="navbar-brand" href="{% url 'index' %}">Shopping Mart</a></h4>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <div class="navbar-right" >
+              <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'Start_Shopping' %}"><span class="glyphicon glyphicon-shopping-cart"></span> Start Shopping</a></li>
+                    <li><a href="{% url 'End_Shopping' %}"><span class="glyphicon glyphicon-off"></span> End Shopping</a></li>
+              </ul>
+
+          </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <!--<h1>Hello, {% if username%}{{username}}{% else%}{{'Twitter'}}{% endif %}!</h1>-->
+        <p>This is simple ShopMart application, in that we can shop and generate the bill.</p>
+        <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>-->
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      {% block content %}
+      {% endblock %}
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2015</p>
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="{% static 'webapp/js/vendor/bootstrap.min.js' %}"></script>
+
+        <script src="{% static 'webapp/js/main.js' %}"></script>
+    </body>
+</html>

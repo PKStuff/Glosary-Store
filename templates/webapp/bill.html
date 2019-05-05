@@ -1,0 +1,31 @@
+<{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  {% if msg is None%}
+  <h2>Your Bill</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for data in all_data %}
+      <tr>
+        <td>{{data.item_name}}</td>
+        <td>{{data.quantity}}</td>
+        <td>{{data.price}}</td>
+        <td>{{data.total_price}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+    <h4 style="color:red;">Your Total is: ${{total}}</h4>
+   {% else %}
+    <h1 style="color:red">{{msg}}</h1>
+    {% endif %}
+</div>
+{% endblock %}
