@@ -9,3 +9,5 @@ class Store_form(forms.ModelForm):
         model = Store
         fields = ['quantity']
 
+
+

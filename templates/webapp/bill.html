@@ -10,6 +10,7 @@
         <th>Quantity</th>
         <th>Price</th>
         <th>Total</th>
+        <th>Modify</th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +20,9 @@
         <td>{{data.quantity}}</td>
         <td>{{data.price}}</td>
         <td>{{data.total_price}}</td>
+        <td><a href="{% url 'delete_item' data.item_number %}"><span class="glyphicon glyphicon-remove"></span></a>
+        <a href="{% url 'update_item' data.item_number %}"><span class="glyphicon glyphicon-edit"></span>
+        </td>
       </tr>
     {% endfor %}
     </tbody>
